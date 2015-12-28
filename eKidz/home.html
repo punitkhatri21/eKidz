@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html manifest="manifest.appcache">
+<head>
+<title>Home</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="assets/css/eric-meyer-reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/eric-meyer-reset.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/foundation/foundation-icons.css">
+<link rel="stylesheet" type="text/css" href="assets/css/foundation/foundation.css">
+<link rel="stylesheet" type="text/css" href="assets/css/home.css" media=screen>
+</head>
+<body>
+<div class="off-canvas-wrap" data-offcanvas>
+ <div class="inner-wrap">
+  <nav class="tab-bar">
+    <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+    </section>
+    <section class="middle tab-bar-section">
+        <h1 class="title">Home</h1>
+    </section> 
+	<section class="right-small">
+        <a class="logout" href="index.html" onclick="localStorage.clear();"><img src="assets/images/logout.png" title="logout" alt="logout"></a>
+    </section>
+    <!-- Off Canvas Menu -->
+  </nav>
+<aside class="left-off-canvas-menu">
+<ul>
+<li>
+<div class="item1">
+<section class="item1-col1"><img src="assets/images/profile.jpg" title="name" alt="name"></section>
+<section class="item1-col2"><p class="name">Punit Khatri</p></section>
+<section class="item1-col3"><p class="class">Class I</p></section>
+</div>
+</li>
+<li><a href="home.html"><i class="step fi-home size-24"></i>&nbsp;Home</a></li>
+<li><a class="off-canvas-submenu-call" href="#"><i class="step fi-torso size-24"></i>&nbsp;Profile<span class="right"> + </span></a></li>
+<ul class="off-canvas-submenu">
+<li><a href="profile.html"><i class="step fi-torso size-24"></i>&nbsp;View Profile</a></li>
+<li><a href="update.html"><i class="step fi-torso size-24"></i>&nbsp;Update Profile</a></li>
+</ul>
+<li><a href="attendance.html"><i class="step fi-database size-24"></i>&nbsp;Attendance & Leave</a></li>
+<li><a class="off-canvas-submenu-call" href="#"><i class="step fi-book size-24"></i>&nbsp;Academics<span class="right"> + </span></a></li>
+<ul class="off-canvas-submenu">
+<li><a href="syllabus.html"><i class="step fi-page-pdf size-24"></i>&nbsp;Syllabus</a></li>
+<li><a href="result.html"><i class="step fi-results size-24"></i>&nbsp;Result</a></li>
+</ul>
+<li><a href="planner.html"><i class="step fi-calendar size-24"></i>&nbsp;Planner</a></li>
+<li><a class="off-canvas-submenu-call" href="#"><i class="step fi-clipboard-notes size-24"></i>&nbsp;Dairy<span class="right"> + </span></a></li>
+<ul class="off-canvas-submenu">
+<li><a href="homework.html"><i class="step fi-page size-24"></i>&nbsp;Homework</a></li>
+<li><a href="assignment.html"><i class="step fi-page-multiple size-24"></i>&nbsp;Assignment</a></li>
+</ul>
+<li><a href="fees.html"><i class="step fi-dollar size-24"></i>&nbsp;Fees Details</a></li>
+<li><a href="suggestions.html"><i class="step fi-comment size-24"></i>&nbsp;Suggestions</a></li>
+<li><a href="contactus.html"><i class="step fi-telephone size-24"></i>&nbsp;Contact us</a></li>
+</ul>
+</aside>    <!-- main content goes here -->
+	<p class="label">Latest Updates</p>
+    <div class="updates">
+	<table>
+	<thead><tr><th>date</th><th>description</th></tr></thead>
+	<tbody><tr><td>06/11/15</td><td>Syllabus for FA-3 has been uploaded. Kindly click “Syllabus” link and check.</td></tr>
+	<tr><td>06/11/15</td><td>Syllabus for FA-3 has been uploaded. Kindly click “Syllabus” link and check.</td></tr>
+	<tr><td>06/11/15</td><td>Syllabus for FA-3 has been uploaded. Kindly click “Syllabus” link and check.</td></tr>
+	<tr><td>06/11/15</td><td>Syllabus for FA-3 has been uploaded. Kindly click “Syllabus” link and check.</td></tr>
+	<tr><td>06/11/15</td><td>Syllabus for FA-3 has been uploaded. Kindly click “Syllabus” link and check.</td></tr>
+	</tbody></table>
+	</div>
+	
+	<p class="label">Attendance Summary</p>
+    <div class="summary">
+	<table>	
+	<tbody><tr><td>Attendance Days :</td><td>79</td></tr>
+	<tr><td>No. of days present :</td><td>73( 82% )</td></tr>
+	<tr><td>No. of days Not Present :</td><td>16( 18% )</td></tr>
+	<tr><td>No. of Half Days :</td><td>0( 0% )</td></tr>
+		
+	</tbody>
+	</table>
+	</div>
+  <!-- close the off-canvas menu -->
+  <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/foundation/foundation.js"></script>
+  <script src="assets/js/foundation/foundation.offcanvas.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script>
+    $(document).foundation();
+	$(".off-canvas-submenu-call").parent().children('img').addClass('toggle');
+	$(".off-canvas-submenu").hide();
+	$(".off-canvas-submenu-call").click(function() {
+	var icon = $(this).parent().next(".off-canvas-submenu").is(':visible') ? '+' : '-';
+	$(this).parent().next(".off-canvas-submenu").slideToggle('fast');
+	$(this).find("span").text(icon);
+	});
+  </script>
+</body>
+</html>
